@@ -1,0 +1,46 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 100%;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.spacio{
+  width: 100%;
+}
+.mobile{
+  display: none;
+}
+.web{
+  display: block;
+}
+.nav-link{
+  border-radius: 15px;
+}
+.nav-link:hover{
+  border-radius: 15px;
+  background-color: aliceblue;
+  color: black;
+}
+.navbar-nav.navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+}
+@media only screen and (min-width:320px) and (max-width:600px){
+  .mobile{display: flex;}
+  .web{display: none;}
+  }
+
+
+

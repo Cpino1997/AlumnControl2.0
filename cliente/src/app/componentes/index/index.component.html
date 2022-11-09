@@ -1,0 +1,20 @@
+<div class="container" *ngIf="!isLoggedIn">
+  <div class="px-4 pt-5 my-5 text-center border-bottom">
+    <h1 class="display-4 fw-bold">AlumnControl</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Plataforma de gestion escolar creada por pinolabs para facilitar los tediosos procesos educativos como la gestion de cursos, ingreso de notas, gestion de apoderados y otros, para mas info preciona <a href="nosotros">aqui!</a>.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+        <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3" routerLink="/login">Ingreso Usuarios</button>
+        <button type="button" routerLink="/nosotros" class="btn btn-outline-secondary btn-lg px-4">Sobre Nosotros</button>
+      </div>
+    </div>
+    <div class="overflow-hidden" style="max-height: 35vh;">
+      <div class="container px-5">
+        <img src="https://imgs.search.brave.com/_AUxAdjHQba0UaAfeQIunvxjxyEeqO15a1hw64Z23nc/rs:fit:960:400:1/g:ce/aHR0cHM6Ly9wbmcu/cG5ndHJlZS5jb20v/dGh1bWJfYmFjay9m/dzgwMC9iYWNrX291/ci8yMDE5MDYxNy9v/dXJtaWQvcG5ndHJl/ZS1jdXRlLWNoaWxk/cmVuLXMtZHJhd2lu/Zy1zdHlsZS1lZHVj/YXRpb24tYWxidW0t/cG9zdGVyLXZlY3Rv/ci1iYWNrZ3JvdW5k/LW1hdGVyaWFsLWlt/YWdlXzEyOTAxMy5q/cGc" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="isLoggedIn" >
+  <app-board [isLoggedIn]="isLoggedIn"></app-board>
+</div>

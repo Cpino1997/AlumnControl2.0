@@ -1,0 +1,45 @@
+<div class="container center w80">
+  <h1 class="centro m-5"> Crear Alumno</h1>
+    <div class="submit-form center">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="nombre">Nombre: </label>
+          <input
+            type="text"
+            class="form-control"
+            id="nombre"
+            required
+            [(ngModel)]="alumno.nombre"
+            name="nombre"
+          />
+        </div>
+        <div class="form-group">
+          <label for="apellido">Apellido: </label>
+          <input
+            class="form-control"
+            id="apellido"
+            required
+            [(ngModel)]="alumno.apellido"
+            name="apellido"
+          />
+        </div>
+        <div class="form-group">
+          <label for="rut">Rut: </label>
+          <input
+            class="form-control"
+            id="rut"
+            required
+            [(ngModel)]="alumno.rut"
+            name="rut"
+          />
+        </div>
+        <button (click)="saveAlumno()" class="btn btn-success m-2">Guardar</button>
+      </div>
+
+      <div *ngIf="submitted">
+        <h4>Alumno creado con exito! </h4>
+        <button class="btn btn-success" (click)="newAlumno()">Añadir Otro </button>
+        <button class="btn btn-success" routerLink="/alumnos">Volver </button>
+      </div>
+    </div>
+</div>

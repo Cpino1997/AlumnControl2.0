@@ -1,0 +1,159 @@
+  <form class="container" name="form" (ngSubmit)="f.form.valid" #f="ngForm" novalidate *ngIf="!submitted">
+    <div class="card p-2 mt-2">
+      <br>
+      <h2 class="titulo centro">Añadir Profesor</h2>
+      <div class="form-floating m-2">
+        <input  type="number" autocomplete="off" class="form-control" id="rut" name="rut"
+        [(ngModel)]="profesor.rut"
+        required
+        minlength="9"
+        maxlength="10"
+        #rut="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && rut.errors }"
+        placeholder="rut: " required>
+        <label for="rut">Rut: </label>
+        <div *ngIf="rut.errors && f.submitted" class="invalid-feedback">
+          <div *ngIf="rut.errors['required']">El rut Es Obligatorio!</div>
+          <div *ngIf="rut.errors['minlength']">
+            Porfavor ingrese un rut valido
+          </div>
+        </div>
+      </div>
+      <div class="form-floating m-2">
+        <input  type="text" autocomplete="off" class="form-control" id="nombre" name="nombre"
+        [(ngModel)]="profesor.nombre"
+        required
+        minlength="4"
+        #nombre="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && nombre.errors }"
+        placeholder="Nombre: " required>
+        <label for="nombre">Nombre: </label>
+        <div *ngIf="nombre.errors && f.submitted" class="invalid-feedback">
+          <div *ngIf="nombre.errors['required']">El nombre Es Obligatorio!</div>
+          <div *ngIf="nombre.errors['minlength']">
+            Porfavor ingrese un nombre valido
+          </div>
+        </div>
+      </div>
+      <div class="form-floating m-2">
+        <input  type="text" autocomplete="off" class="form-control" id="apellido" name="apellido"
+        [(ngModel)]="profesor.apellido"
+        required
+        minlength="6"
+        #apellido="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && apellido.errors }"
+        placeholder="apellido: " required>
+        <label for="apellido">Apellido: </label>
+        <div *ngIf="apellido.errors && f.submitted" class="invalid-feedback">
+          <div *ngIf="apellido.errors['required']">El apellido Es Obligatorio!</div>
+          <div *ngIf="apellido.errors['minlength']">
+            Porfavor ingrese un apellido valido
+          </div>
+        </div>
+      </div>
+      <div class="form-floating m-2">
+        <input  type="mail" autocomplete="off" class="form-control" id="correo" name="correo"
+        [(ngModel)]="profesor.correo"
+        required
+        minlength="10"
+        #correo="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && correo.errors }"
+        placeholder="correo: " required>
+        <label for="correo">Correo: </label>
+        <div *ngIf="correo.errors && f.submitted" class="invalid-feedback">
+          <div *ngIf="correo.errors['required']">El correo Es Obligatorio!</div>
+          <div *ngIf="correo.errors['minlength']">
+            Porfavor ingrese un correo valido
+          </div>
+        </div>
+      </div>
+      <div class="form-floating m-2">
+        <input  type="number" autocomplete="off" class="form-control" id="numero" name="numero"
+        [(ngModel)]="profesor.numero"
+        required
+        minlength="8"
+        #numero="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && numero.errors }"
+        placeholder="numero: " required>
+        <label for="numero">Numero: </label>
+        <div *ngIf="numero.errors && f.submitted" class="invalid-feedback">
+          <div *ngIf="numero.errors['required']">El numero Es Obligatorio!</div>
+          <div *ngIf="numero.errors['minlength']">
+            Porfavor ingrese un numero valido
+          </div>
+        </div>
+      </div>
+      <div class="form-floating m-2">
+        <input  type="text" autocomplete="off" class="form-control" id="asignatura" name="asignatura"
+        [(ngModel)]="profesor.asignatura"
+        required
+        minlength="10"
+        #asignatura="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && asignatura.errors }"
+        placeholder="Titulo: " required>
+        <label for="asignatura">Titulo: </label>
+        <div *ngIf="asignatura.errors && f.submitted" class="invalid-feedback">
+          <div *ngIf="asignatura.errors['required']">La asignatura Es Obligatoria!</div>
+          <div *ngIf="asignatura.errors['minlength']">
+            Porfavor ingrese un asignatura valido
+          </div>
+        </div>
+      </div>
+      <div class="form-floating m-2">
+        <input  type="text" autocomplete="off" class="form-control" id="banco" name="banco"
+        [(ngModel)]="profesor.banco"
+        required
+        minlength="8"
+        #banco="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && cuenta.errors }"
+        placeholder="banco: " required>
+        <label for="banco">Banco: </label>
+        <div *ngIf="banco.errors && f.submitted" class="invalid-feedback">
+          <div *ngIf="banco.errors['required']">El banco Es Obligatorio!</div>
+          <div *ngIf="banco.errors['minlength']">
+            Porfavor ingrese un banco valido
+          </div>
+        </div>
+      </div>
+      <div class="form-floating m-2">
+        <input  type="text" autocomplete="off" class="form-control" id="cuenta" name="cuenta"
+        [(ngModel)]="profesor.cuenta"
+        required
+        minlength="8"
+        #cuenta="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && cuenta.errors }"
+        placeholder="cuenta: " required>
+        <label for="cuenta">Cuenta: </label>
+        <div *ngIf="cuenta.errors && f.submitted" class="invalid-feedback">
+          <div *ngIf="cuenta.errors['required']">La cuenta Es Obligatorio!</div>
+          <div *ngIf="cuenta.errors['minlength']">
+            Porfavor ingrese una cuenta valida
+          </div>
+        </div>
+      </div>
+      <div class="form-floating m-2">
+        <input  type="text" autocomplete="off" class="form-control" id="valor" name="valor"
+        [(ngModel)]="profesor.valor"
+        required
+        minlength="5"
+        #valor="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && valor.errors }"
+        placeholder="valor: " required>
+        <label for="valor">Precio: </label>
+        <div *ngIf="valor.errors && f.submitted" class="invalid-feedback">
+          <div *ngIf="valor.errors['required']">El precio Es Obligatorio!</div>
+          <div *ngIf="valor.errors['minlength']">
+            Porfavor ingrese un precio valido</div>
+        </div>
+      </div>
+      <div class="button-group centro">
+        <button (click)="saveProfe()" class="btn btn-success m-2">Guardar</button>
+        <button type="reset" class="btn btn-info m-3">Borrar</button>
+      </div>
+    </div>
+    <div class="container centro" *ngIf="submitted">
+      <h4>Profe creado con exito! </h4>
+      <button class="btn btn-success" (click)="newProfe()">Añadir Otro </button>
+      <button class="btn btn-success" routerLink="/profesores">Volver </button>
+    </div>
+  </form>

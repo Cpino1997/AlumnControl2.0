@@ -1,0 +1,31 @@
+
+<div class="container centro">
+  <div class="row">
+    <div class="col-xl-12 col-sm-6 mt-5">
+      <h5 class="small text-uppercase">Nuestros Profesores</h5>
+
+      </div>
+  </div>
+  <hr>
+  <div class="row container w80 text-center">
+      <!-- profesores -->
+      <div class="col-xl-3 col-sm-6 mb-2" *ngFor="let profe of profesores; let i = index" [class.active]="i == id" (click)="setActive(profe, i)">
+        <div class="otro">
+          <div class="bg-white rounded shadow-sm py-5 px-4"><img src="https://mdbootstrap.com/img/new/avatars/{{profe.id}}.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+            <h5 class="mb-0">{{profe.nombre}} {{profe.apellido}}</h5><span class="small text-uppercase text-muted">{{profe.asignatura}}</span>
+            <ul class="social mb-0 list-inline mt-3">
+                <li class="list-inline-item"><a href="mailto:{{profe.correo}}" class="social-link"><i class="fa-regular fa-envelope"></i></a></li>
+                <li class="list-inline-item"><a href="tel:{{profe.numero}}" class="social-link"><i class="fa-solid fa-phone"></i></a></li>
+            </ul>
+          </div>
+        </div>
+
+
+      </div>
+      <!-- profesores -->
+      <div class="col-xl-12 col-sm-6 mb-2" *ngIf="showAdd">
+        <button mat-raised-button color="primary" href="crear-profe" routerLink="/crear-profe" class="m-3">Agregar Profe</button>
+      </div>
+  </div>
+  <hr>
+</div>

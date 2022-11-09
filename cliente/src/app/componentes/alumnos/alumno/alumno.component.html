@@ -1,0 +1,66 @@
+<div class="centro" *ngIf="viewMode; else editable">
+  <div class="container p-5" *ngIf="currentAlumno.id">
+    <h4>
+      {{ currentAlumno.nombre }} {{currentAlumno.apellido}}</h4>
+    <div>
+      <label><strong>Rut:</strong></label>
+      {{ currentAlumno.rut }}
+    </div>
+    <a
+      class="btn btn-primary-lg"
+      routerLink="/alumnos/{{ currentAlumno.id }}"
+    >
+      Editar
+    </a>
+    <button class="btn btn-waring-lg" (click)="deleteAlumno()">
+      Borrar
+    </button>
+  </div>
+
+  <div *ngIf="!currentAlumno">
+    <br />
+    <p>Porfavor selecciona un alumno...</p>
+  </div>
+</div>
+
+<ng-template #editable>
+  <div *ngIf="currentAlumno.id" class="edit-form">
+    <h1 class="m-5 centro">Actualizar Alumno</h1>
+    <p class="m-5">{{ message }}</p>
+    <form>
+      <div class="form-group">
+        <label for="nombre">Nombre:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nombre"
+          [(ngModel)]="currentAlumno.nombre"
+          name="nombre"
+        />
+      </div>
+      <div class="form-group">
+        <label for="apellido">Apellido:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="apellido"
+          [(ngModel)]="currentAlumno.apellido"
+          name="apellido"
+        />
+      </div>
+    </form>
+    <div class="centro">
+      <button class="btn btn-danger m-2" (click)="deleteAlumno()">
+        Borrar Alumno
+      </button>
+      <button type="submit" class="btn btn-primary" routerLink="/alumnos">Volver</button>
+      <button type="submit" class="btn btn-success m-2" (click)="updateAlumno()">Actualizar Alumno</button>
+    </div>
+  </div>
+
+  <div class="container" *ngIf="!currentAlumno.id">
+    <br />
+    <p class="centro">No puedes acceder a este Alumno uwu</p>
+    <app-error404></app-error404>
+  </div>
+</ng-template>

@@ -1,0 +1,113 @@
+<!-- menu Web-->
+<div class="web">
+  <!-- Menu publico-->
+  <div class="container" *ngIf="!isLoggedIn">
+    <header class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="home" routerLink='home' class="nav-link">Inicio</a></li>
+        <li class="nav-item"><a href="funciones" routerLink="funciones" class="nav-link">Servicios</a></li>
+        <li class="nav-item"><a href="nosotros" routerLink="nosotros" class="nav-link">Nosotros</a></li>
+      </ul>
+    </header>
+  </div>
+  <!-- Menu publico-->
+  <!-- Menu User-->
+  <div class="container" *ngIf="showUserBoard">
+    <header class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="home" routerLink='home' class="nav-link">Inicio</a></li>
+        <li class="nav-item"><a href="funciones" routerLink="funciones" class="nav-link">Servicios</a></li>
+        <li class="nav-item"><a href="nosotros" routerLink="nosotros" class="nav-link">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" (click)="logout()">Salir</a></li>
+      </ul>
+    </header>
+  </div>
+  <!-- Menu User-->
+  <!-- Menu Profe-->
+  <div class="container" *ngIf="showModBoard">
+    <header class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="home" routerLink='home' class="nav-link">Inicio</a></li>
+        <li class="nav-item"><a href="alumnos" routerLink='alumnos' class="nav-link">Alumnos</a></li>
+        <li class="nav-item"><a href="profesores" routerLink="profesores" class="nav-link">Profesores</a></li>
+        <li class="nav-item"><a href="cursos" routerLink="nosotros" class="nav-link">Cursos</a></li>
+        <li class="nav-item"><a href="nosotros" routerLink="nosotros" class="nav-link">Notas</a></li>
+        <li class="nav-item"><a class="nav-link" (click)="logout()">Salir</a></li>
+      </ul>
+    </header>
+  </div>
+  <!-- Menu Profe-->
+  <!-- Menu Admin-->
+  <div class="container" *ngIf="showAdminBoard">
+    <header class="d-flex justify-content-center py-3">
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="home" routerLink='home' class="nav-link">Inicio</a></li>
+        <li class="nav-item"><a href="alumnos" routerLink='alumnos' class="nav-link">Alumnos</a></li>
+        <li class="nav-item"><a href="profesores" routerLink="profesores" class="nav-link">Profesores</a></li>
+        <li class="nav-item"><a href="cursos" routerLink="cursos" class="nav-link">Cursos</a></li>
+        <li class="nav-item"><a href="matriculas" routerLink="matriculas" class="nav-link">Matriculas</a></li>
+        <li class="nav-item"><a class="nav-link" (click)="logout()">Salir</a></li>
+      </ul>
+    </header>
+  </div>
+  <!-- Menu Admin-->
+</div>
+<!-- menu Web-->
+<!-- menu material-ui-->
+<mat-toolbar class="mobile">
+  <!-- Menu Publico-->
+  <div *ngIf="!isLoggedIn">
+    <button mat-button [matMenuTriggerFor]="aboveMenu"><mat-icon>menu</mat-icon></button>
+    <mat-menu #aboveMenu="matMenu" yPosition="above">
+      <button mat-menu-item  routerLink='home'>Inicio</button>
+      <button mat-menu-item  routerLink='servicios'>Servicios</button>
+      <button mat-menu-item  routerLink='nosotros'>Sobre Nosotros</button>
+    </mat-menu>
+  </div>
+  <!-- Menu Publico-->
+
+  <!-- Menu apoderado-->
+  <div *ngIf="showUserBoard">
+  <button mat-button [matMenuTriggerFor]="aboveMenu"><mat-icon>menu</mat-icon></button>
+  <mat-menu #aboveMenu="matMenu" yPosition="above">
+    <button mat-menu-item>Notas</button>
+    <button mat-menu-item>Reuniones</button>
+    <button mat-menu-item>Soporte</button>
+  </mat-menu>
+</div>
+  <!-- Menu apoderado-->
+  <!-- Menu profe-->
+  <div *ngIf="showModBoard">
+    <button mat-button [matMenuTriggerFor]="aboveMenu"><mat-icon>menu</mat-icon></button>
+    <mat-menu #aboveMenu="matMenu" yPosition="above">
+      <button mat-menu-item>asignaturas</button>
+      <button mat-menu-item>cursos</button>
+      <button mat-menu-item>notas</button>
+      <button mat-menu-item>Soporte</button>
+    </mat-menu>
+  </div>
+  <!-- Menu profe-->
+  <!-- Menu Admin-->
+  <div *ngIf="showAdminBoard">
+    <button mat-button [matMenuTriggerFor]="aboveMenu"><mat-icon>menu</mat-icon></button>
+    <mat-menu #aboveMenu="matMenu" yPosition="above">
+      <button mat-menu-item routerLink="/alumnos" href="/alumnos">Alumnos</button>
+      <button mat-menu-item>Profesores</button>
+      <button mat-menu-item>Cursos</button>
+      <button mat-menu-item>Notas</button>
+      <button mat-menu-item>Rendimientos</button>
+      <button mat-menu-item>Soporte</button>
+    </mat-menu>
+  </div>
+  <!-- Menu Admin-->
+<div class="spacio"></div>
+<div class="title">AlumnControl</div>
+<div class="spacio"></div>
+  <button mat-button [matMenuTriggerFor]="belowMenu"><mat-icon>settings</mat-icon></button>
+  <mat-menu #belowMenu="matMenu" yPosition="below">
+    <button mat-menu-item *ngIf="isLoggedIn"><mat-icon>account_circle</mat-icon>Perfil</button>
+    <button mat-menu-item *ngIf="!isLoggedIn" routerLink="login" ><mat-icon>login</mat-icon>Ingreso</button>
+    <button mat-menu-item *ngIf="isLoggedIn" (click)="logout()"><mat-icon>logout</mat-icon>Salir</button>
+  </mat-menu>
+</mat-toolbar>
+<!-- menu mobil-->

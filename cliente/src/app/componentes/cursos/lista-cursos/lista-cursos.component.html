@@ -1,0 +1,31 @@
+
+<div class="container centro">
+  <div class="row">
+    <div class="col-xl-12 col-sm-6 mt-5">
+      <h5 class="small text-uppercase">Nuestros Cursos</h5>
+
+      </div>
+  </div>
+  <hr>
+  <div class="row container w80 text-center">
+      <!-- profesores -->
+      <div class="col col-xl-4 col-sm-6" *ngFor="let curso of cursos; let i = index" [class.active]="i == id" (click)="setActive(curso, i)">
+        <div class="otro">
+          <div class="bg-white rounded shadow-sm py-5 px-3">
+            <img src="https://mdbootstrap.com/img/new/avatars/{{curso.profesorDTO.id}}.jpg" alt="" width="100" class="img-fluid rounded-circle mb-3 img-thumbnail shadow-sm">
+            <h5 class="mb-0">{{curso.nombre}}</h5><span class="small text-uppercase text-muted">{{curso.codigo}}</span>
+            <ul class="social mb-0 list-inline">
+                <li class="list-inline-item"><a href="/crear-matriucula" routerLink="/crear-matriucula" class="social-link">Ingresa aqui!</a></li>
+            </ul>
+          </div>
+        </div>
+
+
+      </div>
+      <!-- profesores -->
+      <div class="col-xl-12 col-sm-6 mb-2">
+        <button mat-raised-button color="primary" href="crear-curso" routerLink="/crear-curso" class="m-3">Crear Curso</button>
+      </div>
+  </div>
+  <hr>
+</div>
